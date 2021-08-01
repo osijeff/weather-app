@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Simple switch example</title>
+    <style>
+        *{
+            margin:0px;
+            box-sizing: border-box;
+        }
+        .app-wrap {
+  
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 15px 15px;
+}
+
+header input, select {
+  width: 100%;
+  max-width: 280px;
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  color:whitesmoke;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 16px 0px 16px 0px;
+  border-bottom: 3px solid #DF8E00;
+
+  font-size: 20px;
+  font-weight: 300;
+  transition: 0.2s ease-out;
+}
+
+header input:focus {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+main {
+  flex: 1 1 100%;
+  padding: 25px 25px 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.location .city {
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.location .date {
+  color: #FFF;
+  font-size: 16px;
+}
+
+.current .temp {
+  color:#DF8E00;
+  font-size: 80px;
+  font-weight: 500;
+  margin: 10px 0px;
+  text-shadow: 2px 10px rgba(0, 0, 0, 0.6);
+}
+
+.current .temp span {
+  font-weight: 500;
+}
+
+.current .weather {
+  color: #FFF;
+  font-size: 32px;
+  font-weight: 700;
+  font-style: italic;
+  margin-bottom: 15px;
+  text-shadow: 0px 3px rgba(0, 0, 0, 0.4);
+}
+
+.current .hi-low {
+  color: #FFF;
+  font-size: 24px;
+  font-weight: 500;
+  text-shadow: 0px 4px rgba(0, 0, 0, 0.4);
+}
+.bg_image{
+background-image: url("../images/weather_bg.jpeg");
+      filter: blur(2px);
+  -webkit-filter: blur(2px);
+  height: 100vh;
+  width: 100%;
+   background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.container{
+    display:flex;
+    justify-content: space-between;
+    align-content:center;  
+     background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 80%;
+  padding: 20px;
+  text-align: center;
+}
+.item{
+    width:33.33%;
+    border: 1px solid whitesmoke;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content:center; 
+    padding: 1em;
+}
+.developer img{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;}
+
+.select{
+    margin-top: 3em;
+
+}
+
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+.container{
+    flex-direction: column;
+}
+.item{
+    width:100%;
+}
+}
+
+    </style>
+</head>
+
+<body>
+
+
+<div class="bg_image"></div>
+<div class="container">
+    <div class="item developer">
+        <img src="../images/agent-2.jpg" alt="">
+        <h1 class="student_name">Aimua Lerator</h1>
+        <h2 class="course_study">Sytem Devlopment</h2>
+        <h3>follow Me</h3>
+        <div class="social">
+            <a href="">twiter</a>
+            <a href="">facebook</a>
+            <a href="">instagram</a>
+        </div>
+        <div id="container"></div>
+    </div>
+    <div class="item">
+        <h1>GET THE WEATHER REPORT OF YOUR CITY</h1>
+     <div class="app-wrap">
+            <header>
+                <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city..." />
+            </header>
+           <main>
+               <section class="location">
+                    <div class="city">Johannesburg, ZA</div>
+                    <div class="date">Thursday 29 June 2021</div>
+                </section>
+                <div class="current">
+                    <div class="temp">15<span>°c</span></div>
+                    <div class="weather">Sunny</div>
+                    <div class="hi-low">13°c / 16°c</div>
+                </div>
+            </main>
+        </div> 
+    </div>
+    <div class="item">
+        <h1 class="project_name">Weather Report Application </h1>
+        <h2 class="project_case_study">Project case Study</h2>
+        <h6 class="case" style="font-size: 1.6rem;">this project is design to update people on daily wether condition around the world. the project is aim to help people to make informed choice regarding their daily decision</h6>
+        <div class="select">
+            <label for="weather" style="font-size: 1.6rem;">Select the weather type today: </label> <br><br>
+            <select id="weather" style="background-color: gray;">
+                <option value="">--Make a choice--</option>
+                <option value="sunny">Sunny</option>
+                <option value="rainy">Rainy</option>
+                <option value="snowing">Snowing</option>
+                <option value="overcast">Overcast</option>
+            </select>
+            
+            <p class="F_back" style="font-size: 1.6rem; margin-top:1em"></p>
+         </div>
+    </div>
+</div>
+
+
+    <script>
+      
+        const api = {
+                key: "074b889d5a931f8342b8a34bec1bfe05",
+
+                base: "https://api.openweathermap.org/data/2.5/"
+            }
+
+            const searchbox = document.querySelector('.search-box');
+            searchbox.addEventListener('keypress', setQuery);
+
+            function setQuery(evt) {
+                if (evt.keyCode == 13) {
+                    // enter key code
+                    getResults(searchbox.value);
+                }
+                
+            }
+
+            function getResults(query) {
+                fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
+                    .then(weather => {
+                        return weather.json();
+                    }).then(displayResults);
+            }
+
+            function displayResults(weather) {
+                let city = document.querySelector('.location .city');
+                city.innerText = `${weather.name}, ${weather.sys.country}`;
+
+                let now = new Date();
+                let date = document.querySelector('.location .date');
+                date.innerText = dateBuilder(now);
+
+                let temp = document.querySelector('.current .temp');
+                temp.innerHTML = `${Math.round(weather.main.temp)}<span>°c</span>`;
+
+                let weather_el = document.querySelector('.current .weather');
+                weather_el.innerText = weather.weather[0].main;
+
+                let hilow = document.querySelector('.hi-low');
+                hilow.innerText = `${Math.round(weather.main.temp_min)}°c / ${Math.round(weather.main.temp_max)}°c`;
+            }
+
+            function dateBuilder(d) {
+                let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
+                let day = days[d.getDay()];
+                let date = d.getDate();
+                let month = months[d.getMonth()];
+                let year = d.getFullYear();
+
+                return `${day} ${date} ${month} ${year}`;
+            };
+         
+
+            
+           
+    </script>
+  
+    
+</body>
+
+</html>
