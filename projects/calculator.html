@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@700;900&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+
+    <style>
+        body{
+            background-color: linear-gradient(to right, gray, black);
+        }
+
+        .calculator-grid {
+            display: grid;
+            justify-content: center;
+            align-content: center;
+            min-height: 100vh;
+            grid-template-columns: repeat(4, 100px);
+            grid-template-rows: minmax(120, auto) repeat(5, 100px);
+
+
+        }
+
+        .calculator-grid>button {
+            cursor: pointer;
+            font-size: 2rem;
+            border: 1px solid black;
+            outline: none;
+            background-color: gold;
+            height: 80px;
+            transition: background-color .5s;
+
+        }
+
+        .calculator-grid>button:hover {
+            background-color: whitesmoke;
+        }
+
+        .span-two {
+            grid-column: span 2;
+        }
+
+        .output {
+            grid-column: 1/-1;
+            background-color: gray;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            flex-direction: column;
+            padding: 10px;
+            word-wrap: break-word;
+            word-break: break-all;
+        }
+
+        .output .previous-operand {
+            color: whitesmoke;
+            font-size: 1.5rem;
+        }
+
+        .output .current-operand {
+            color: gold;
+            font-size: 1.5rem;
+        }
+
+
+        /* COMING SOON STYLE*/
+        .soon {
+            font-size: 5rem;
+            font-weight: bold;
+            padding: 3rem;
+        }
+
+        .coming-soon {
+            min-height: 40vh;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+
+        .day,
+        .hour,
+        .minuts,
+        .second {
+            font-size: 3rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="calculator-grid">
+        <div class="output">
+            <div data-previous-operand class="previous-operand"></div>
+            <div data-current-operand class="current-operand"></div>
+        </div>
+        <button data-all-clear class="span-two">Ac</button>
+        <button data-delete>DEL</button>
+        <button data-operation>#</button>
+        <button data-number>1</button>
+        <button data-number>2</button>
+        <button data-number>3</button>
+        <button data-operation>*</button>
+        <button data-number>4</button>
+        <button data-number>5</button>
+        <button data-number>6</button>
+        <button data-operation>+</button>
+        <button data-number>7</button>
+        <button data-number>8</button>
+        <button data-number>9</button>
+        <button data-operation>-</button>
+        <button data-number>.</button>
+        <button data-number>0</button>
+        <button data-equal class="span-two">=</button>
+
+
+
+    </div>
+
+
+    <!-- CALCULATOR END -->
+
+
+    <!-- COUNT DOWN TIMER -->
+    <section class="coming-soon">
+        <div>
+            <div>
+                <h2 class="soon">opening soon </h2>
+                <div class="countdown">
+                    <div class="container-day">
+                        <h3 class="day">Time</h3>
+                        <h3>Date</h3>
+                    </div>
+                    <div class="container-hour">
+                        <h3 class="hour">Time</h3>
+                        <h3>Hour</h3>
+                    </div>
+                    <div class="container-minute">
+                        <h3 class="minuts">Time</h3>
+                        <h3>Minuts</h3>
+                    </div>
+                    <div class="container-second">
+                        <h3 class="second">Time</h3>
+                        <h3>Seconds</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <img src="../images/undraw_time_management_30iu.svg" alt="" width="300" height="300">
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <footer class="footer-distributed">
+
+        <div class="footer-left">
+            <img src="../images/LOGO.png">
+            <h3>Aimua <span>Jefrey</span></h3>
+
+            <p class="footer-links">
+                <a href="#">Home</a>
+
+                <a href="#">Blog</a>
+
+                <a href="#">About</a>
+
+                <a href="#">Contact</a>
+            </p>
+
+            <p class="footer-company-name">© 202i Aimua Jeffrey </p>
+        </div>
+
+        <div class="footer-center">
+            <div>
+                <i class="fa fa-map-marker"></i>
+                <p><span>30 MANDY- STREET
+                        Bldg. No. A - 1, Sector - 1</span>
+                    Booysens - 400710</p>
+            </div>
+
+            <div>
+                <i class="fa fa-phone"></i>
+                <p>+277040314292</p>
+            </div>
+            <div>
+                <i class="fa fa-envelope"></i>
+                <p><a href="mailto:support@bcs.com">aimua_jef@yahoo.com</a></p>
+            </div>
+        </div>
+        <div class="footer-right">
+            <p class="footer-company-about">
+                <span>About Aimua jeffrey</span>
+                He offer training and skill building courses across Technology, Design, Devlopment and
+                Digital marketing.
+            </p>
+            <div class="footer-icons">
+                <a href="#"><i class="fa fa-facebook"></i></a>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+                <a href="#"><i class="fa fa-instagram"></i></a>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+                <a href="#"><i class="fa fa-youtube"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+
+
+        // CALCULATOR
+
+
+
+
+        class Calculator {
+            constructor(previousOperandTextElement, currentOperandTextElement) {
+                this.previousOperandTextElement = previousOperandTextElement
+                this.currentOperandTextElement = currentOperandTextElement
+                this.clear()
+            }
+            clear() {
+                this.currentOperand = ''
+                this.previousOperand = ''
+                this.operation = undefined
+            }
+            delete() {
+                this.currentOperand = this.currentOperand.toString().slice(0, -1)
+            }
+            appendNumber(number) {
+                if (number === '.' && this.currentOperand.includes('.')) return
+                this.currentOperand = this.currentOperand.toString() + number.toString()
+            }
+            chooseOperation(operation) {
+                if (this.currentOperand === '') return
+                if (this.previousOperand !== '') {
+                    this.compute()
+                }
+                this.operation = operation
+                this.previousOperand = this.currentOperand
+                this.currentOperand = ''
+            }
+            compute() {
+                let computation
+                const prev = parseFloat(this.previousOperand)
+                const current = parseFloat(this.currentOperand)
+                if (isNaN(prev) || isNaN(current)) return
+                switch (this.operation) {
+                    case '+':
+                        computation = prev + current
+                        break
+                    case '*':
+                        computation = prev * current
+                        break
+                    case '-':
+                        computation = prev - current
+                        break
+                    case '#':
+                        computation = prev / current
+                        break
+                    default:
+                        return
+
+                }
+                this.currentOperand = computation
+                this.operation = undefined
+                this.previousOperand = ''
+            }
+
+
+            getDisplayNumber(number) {
+                const stringNumber = number.toString()
+                const integerDigits = parseFloat(stringNumber.split('.')[0])
+                const decimalDigits = stringNumber.split('.')[1]
+                let integerDisplay
+                if (isNaN(integerDigits)) {
+                    integerDisplay = ''
+                } else {
+                    integerDisplay = integerDigits.toLocaleString('en', {
+                        maximumFractionDigits: 0
+                    })
+                }
+                if (decimalDigits != null) {
+                    return `${integerDisplay}.${decimalDigits}`
+                } else {
+                    return integerDisplay
+                }
+
+            }
+            updateDisplay() {
+                this.currentOperandTextElement.innerText =
+                    this.getDisplayNumber(this.currentOperand)
+                if (this.operation != null) {
+                    this.previousOperandTextElement.innerText =
+                        `${this.getDisplayNumber(this.previousOperand)} ${this.operation}`
+
+
+                } else {
+                    this.previousOperandTextElement.innerText = ''
+                }
+
+            }
+
+
+        }
+        const numberButtons = document.querySelectorAll('[data-number]')
+        const operationButtons = document.querySelectorAll('[data-operation]')
+        const equalsButton = document.querySelector('[data-equal]')
+        const deleteButton = document.querySelector('[data-delete]')
+        const clearButton = document.querySelector('[data-all-clear]')
+        const previousOperandTextElement = document.querySelector('[data-previous-operand ]')
+        const currentOperandTextElement = document.querySelector('[data-current-operand ]')
+
+        const calculator = new Calculator(previousOperandTextElement, currentOperandTextElement);
+
+        numberButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                calculator.appendNumber(button.innerText)
+                calculator.updateDisplay()
+
+            })
+        })
+
+        operationButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                calculator.chooseOperation(button.innerText)
+                calculator.updateDisplay()
+
+            })
+        })
+
+
+        equalsButton.addEventListener('click', button => {
+            calculator.compute()
+            calculator.updateDisplay()
+
+        })
+
+        clearButton.addEventListener('click', button => {
+            calculator.clear()
+            calculator.updateDisplay()
+
+        })
+
+        deleteButton.addEventListener('click', button => {
+            calculator.delete()
+            calculator.updateDisplay()
+
+        })
+    </script>
+            
+                
+            </body>
+            </html>
